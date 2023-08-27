@@ -15,7 +15,7 @@ public class ParametrizedTest {
 
     @ValueSource(strings = {"Русский" , "English", "Deutsch", "日本語"})
     @ParameterizedTest(name = "Wikipedia home page should have \"{0}\" language.")
-    void wikipediaHomePageShouldHaveLanguage(String testData) {
+    void wikipediaHomePageShouldHaveLanguageTest(String testData) {
 
         open("https://wikipedia.org/");
         $(".central-featured").shouldHave(text(testData));
@@ -28,7 +28,7 @@ public class ParametrizedTest {
             "Java, Java[прим. 1] — строго типизированный объектно-ориентированный язык программирования общего назначения"
     })
     @ParameterizedTest(name = "Wikipedia page for \"{0}\" should have text \"{1}\" in its first paragraph.")
-    void wikipediaShouldHaveTextInArticle(String testData, String expectedResult) {
+    void wikipediaShouldHaveTextInArticleTest(String testData, String expectedResult) {
 
         open("https://wikipedia.org/");
         $("#searchInput").setValue(testData).pressEnter();
